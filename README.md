@@ -1,14 +1,13 @@
 # Asp.Net-Framework-Test
-Тестовий додаток "Реєстрація учасників конференції"
-ASP.Net MVC (.NET framework 4.5.2) додаток «Реєстрація учасників конференції»
+Test application "Registration of conference participants" ASP.Net MVC (.NET framework 4.5.2) application "Registration of conference participants"
 
-Спершу інтерфейс має форму для реєстрації учасника або входу вже зареєстрованого. 
-1) Реєстрація учасника на конференцію проходить за полями:
-- ПІБ
-- вік
-- обласний центр
-- eMail
-- телефон
-- пароль
-Всі поля обов'язкові крім «телефон». Поле «обласний центр» - випадаючий перелік вже існуючих в Україні (5 для прикладу). Після натискання на кнопку відбувається відправлення та запам'ятовування даних на сервері, зберігання має працювати автономно, з використанням сервера БД(SQL Server).
-2) Вхід для перегляду переліку всіх зареєстрованих учасників конференції реалізувати по eMail + пароль. Таблицю учасників зроблено по всім полям (крім пароль) з можливістю сортування по стовпцях - ПІБ, вік, обласний центр. Також реалізувано підсвічування самого користувача в таблиці, який переглядає її.
+First, the interface has a form for registration of a participant or login of an already registered one.
+
+Participant registration for the conference takes place according to the following fields:
+Full name
+age
+Regional Center
+email
+phone
+password All fields are mandatory except "phone". The "regional center" field is a drop-down list of already existing ones in Ukraine (5 for example). After clicking on the button, the data is sent and stored on the server, the storage must work autonomously, using a database server (SQL Server).
+Log in to view the list of all registered conference participants by email + password. The table of participants is made by all fields (except password) with the possibility of sorting by columns - full name, age, regional center. Highlighting of the user himself in the table, who is viewing it, is also implemented.
