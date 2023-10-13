@@ -1,0 +1,64 @@
+﻿@using Microsoft.AspNet.Identity
+@{
+
+    bool isLoggedIn = true;
+    if (string.IsNullOrWhiteSpace(User.Identity.Name))
+    {
+        isLoggedIn = false;
+    }
+
+}
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@ViewBag.Title - My ASP.NET Application</title>
+    @Styles.Render("~/Content/css")
+    @Scripts.Render("~/bundles/modernizr")
+</head>
+<body class="bg-dark text-white">
+    <div class="container ">
+        <header class="p-3 ">
+            <div class="container">
+                <div class="-lg-start d-flex flex-wrap justify-content-center justify-content">
+                    @if (isLoggedIn)
+                    {
+                        <ul class="nav col-12 col-lg-auto me-lg-auto mb-2 justify-content-center mb-md-0">
+                            <li class="btn btn-primary homeButton">
+                                @Html.ActionLink("Home", "Input", "Home")
+                            </li>
+                        </ul>
+                        using (Html.BeginForm("LogOut", "Account", FormMethod.Post))
+                        {
+                            @Html.AntiForgeryToken()
+
+                            <input type="submit" value="LogOut" class="btn btn-secondary" />
+                        }
+                    }
+                    else
+                    {
+
+                        <div class="text-end">
+                            <a href="@Url.Action("Login", "Account")" class="btn btn-outline-light me-2">Login</a>
+                            <a href="@Url.Action("Signup", "Account")" class="btn btn-warning">Sign-up</a>
+                        </div>
+                    }
+
+                </div>
+            </div>
+        </header>
+        <div class="container body-content d-flex justify-content-center">
+            @RenderBody()
+
+        </div>
+    </div>
+
+
+    @Scripts.Render("~/bundles/jqueryval")
+    @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/bootstrap")
+    @RenderSection("scripts", required: false)
+</body>
+</html>

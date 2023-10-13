@@ -1,0 +1,86 @@
+﻿@using Web.Dtos.UserDtos;
+@model IEnumerable<Web.Dtos.UserDtos.UserDto>
+@{
+    ViewBag.Title = "Home Page";
+
+    var userDtos = Model.ToList();
+    var currentUserID = User.Identity.Name;
+    var currentUserclass = "";
+}
+
+<div class="jumbotron">
+    <h1>Home Page</h1>
+    <table class="table table-dark table-striped hometable">
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.User_ID)
+            </th>
+            <th>
+                @Html.ActionLink("FirstName", "Index", new { sortOrder = "firstName" })
+            </th>
+            <th>
+                @Html.ActionLink("MiddleName", "Index", new { sortOrder = "middleName" })
+            </th>
+            <th>
+                @Html.ActionLink("LastName", "Index", new { sortOrder = "lastName" })
+            </th>
+            <th>
+                @Html.ActionLink("Age", "Index", new { sortOrder = "age" })
+            </th>
+            <th>
+                @Html.ActionLink("RegionalCenterName", "Index", new { sortOrder = "regionalCenter" })
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.RegionalCenter.RegionalCenter_ID)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Email)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.PhoneNumber)
+            </th>
+        </tr>
+
+        @foreach (var user in userDtos)
+        {
+            if (user.User_ID.ToString() == currentUserID)
+            {
+                currentUserclass = "currentUser";
+            }
+            else
+            {
+                currentUserclass = "";
+            }
+            <tr id='@currentUserclass'>
+                <td>
+                    @Html.DisplayFor(modelItem => user.User_ID)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => user.FirstName)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => user.MiddleName)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => user.LastName)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => user.Age)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => user.RegionalCenter.Name)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => user.RegionalCenter.RegionalCenter_ID)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => user.Email)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => user.PhoneNumber)
+                </td>
+            </tr>
+        }
+    </table>
+</div>
+
