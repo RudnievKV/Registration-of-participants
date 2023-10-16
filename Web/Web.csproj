@@ -195,13 +195,9 @@
     <Compile Include="Dtos\RegionalCenterDtos\RegionalCenterDto.cs" />
     <Compile Include="Dtos\RegistrationForm.cs" />
     <Compile Include="Dtos\UserDtos\UserDto.cs" />
-    <Compile Include="Migrations\202310121357121_initial.cs" />
-    <Compile Include="Migrations\202310121357121_initial.designer.cs">
-      <DependentUpon>202310121357121_initial.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\202310130016343_Second.cs" />
-    <Compile Include="Migrations\202310130016343_Second.designer.cs">
-      <DependentUpon>202310130016343_Second.cs</DependentUpon>
+    <Compile Include="Migrations\202310161147273_Initial.cs" />
+    <Compile Include="Migrations\202310161147273_Initial.designer.cs">
+      <DependentUpon>202310161147273_Initial.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\RegionalCenter.cs" />
@@ -305,11 +301,8 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\202310121357121_initial.resx">
-      <DependentUpon>202310121357121_initial.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202310130016343_Second.resx">
-      <DependentUpon>202310130016343_Second.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\202310161147273_Initial.resx">
+      <DependentUpon>202310161147273_Initial.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

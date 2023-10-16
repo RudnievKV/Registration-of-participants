@@ -19,7 +19,8 @@ namespace Web.Models
             modelBuilder.Entity<RegionalCenter>()
                 .HasMany(x => x.Users)
                 .WithRequired(x => x.RegionalCenter)
-                .HasForeignKey(x => x.RegionalCenter_ID);
+                .HasForeignKey(x => x.RegionalCenter_ID)
+                .WillCascadeOnDelete(false);
         }
     }
 }
