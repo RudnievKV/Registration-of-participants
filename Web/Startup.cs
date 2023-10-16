@@ -33,7 +33,6 @@ namespace Web
 
             var mydb = new MyDBContext();
 
-            mydb.AddDataIfEmpty();
 
             container.Register<MyDBContext>(() => new MyDBContext(), Lifestyle.Scoped);
             container.Register<IUnitOfWork, UnitOfWork>(Lifestyle.Scoped);
